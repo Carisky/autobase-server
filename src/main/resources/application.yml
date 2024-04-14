@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: autobase-server
+  datasource:
+    url: jdbc:postgresql://cariski.postgres.database.azure.com:5432/autobase
+    username: cariski
+    password: yolka_today22
+    driver-class-name: org.postgresql.Driver
+
+flyway:
+  url: jdbc:postgresql://cariski.postgres.database.azure.com:5432/autobase
+  user: cariski
+  password: yolka_today22
+  table: schema_version
+  sqlMigrationPrefix: V
+  placeholderReplacement: false
+  baselineOnMigrate: true
+  locations: filesystem:src/main/resources/db/migration
