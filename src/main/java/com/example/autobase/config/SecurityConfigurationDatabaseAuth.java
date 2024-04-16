@@ -35,8 +35,8 @@ public class SecurityConfigurationDatabaseAuth {
                 .cors().and()
                 .authorizeHttpRequests((authz) -> authz
                         .antMatchers("/Login/**").permitAll()
-                        .antMatchers("/navigation/**").hasAuthority("ADMIN")
-                        .antMatchers("/**").hasAuthority("USER")
+                        .antMatchers("/**/ADMIN/**").hasAuthority("ADMIN")
+                        .antMatchers("/**/USER/**").hasAuthority("USER")
                         .anyRequest().authenticated()
                 )
                 .logout((logout) -> logout
@@ -54,7 +54,7 @@ public class SecurityConfigurationDatabaseAuth {
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("http://localhost:3000"); // Allow requests from this origin
+        config.addAllowedOrigin("http://localhost:3000");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         source.registerCorsConfiguration("/**", config);

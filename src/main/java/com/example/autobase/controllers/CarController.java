@@ -1,9 +1,9 @@
 package com.example.autobase.controllers;
 
-
-
 import com.example.autobase.controllers.response.Response;
+import com.example.autobase.models.Car;
 import com.example.autobase.models.CargoType;
+import com.example.autobase.services.impl.CarServiceImpl;
 import com.example.autobase.services.impl.CargoTypeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,23 +16,24 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/CargoTypes")
+@RequestMapping("/Cars")
 @CrossOrigin(origins = {"http://localhost:3000"})
-public class CargoTypeController {
-    private final CargoTypeServiceImpl cargoTypeService;
+public class CarController {
 
+
+    private final CarServiceImpl carService;
     @Autowired
-    public CargoTypeController(CargoTypeServiceImpl cargoTypeService){
-        this.cargoTypeService = cargoTypeService;
+    public CarController(CarServiceImpl carService){
+        this.carService = carService;
     }
 
-    @GetMapping("/USER/")
+    @GetMapping("/ADMIN/")
     public ResponseEntity<Object> findAll() {
-        List<CargoType> cargoTypes = cargoTypeService.findAll();
-        if (cargoTypes != null && !cargoTypes.isEmpty()) {
-            return ResponseEntity.ok().body(new Response<>(cargoTypes, HttpStatus.OK.value(), "Cargo Types found"));
+        List<Car> cars = carService.findAll();
+        if (cars != null && !cars.isEmpty()) {
+            return ResponseEntity.ok().body(new Response<>(cars, HttpStatus.OK.value(), "Cars Types found"));
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Response<>(null, HttpStatus.NOT_FOUND.value(), "No Cargo Types found"));
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Response<>(null, HttpStatus.NOT_FOUND.value(), "No Cars found"));
         }
     }
 

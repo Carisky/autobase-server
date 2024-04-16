@@ -33,7 +33,7 @@ public class RequestController {
         this.cargoTypeService = cargoTypeService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/ADMIN/")
     public ResponseEntity<Object> findAll() {
         List<Request> requests = requestService.findAll();
         if (requests != null && !requests.isEmpty()) {

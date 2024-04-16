@@ -23,7 +23,7 @@ public class DriverController {
         this.driverService = driverService;
     }
 
-    @GetMapping("/{driverId}")
+    @GetMapping("/ADMIN/{driverId}")
     public ResponseEntity<Object> findById(@PathVariable Long driverId) {
         Optional<Driver> driver = driverService.findById(driverId);
         if (driver != null) {
@@ -33,7 +33,7 @@ public class DriverController {
         }
     }
 
-    @GetMapping("/")
+    @GetMapping("/ADMIN/")
     public ResponseEntity<Object> findAll() {
         List<Driver> drivers = driverService.findAll();
         if (drivers != null && !drivers.isEmpty()) {

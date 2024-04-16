@@ -13,7 +13,11 @@ public class CargoType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cargo_type_id")
-    private int id;
+    private Long id;
 
+    @Column(name = "require_xp")
+    private int require_xp;
+
+    @Column(name = "name")
     private String name;
 }

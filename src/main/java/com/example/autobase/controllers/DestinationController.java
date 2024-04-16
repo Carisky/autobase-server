@@ -22,7 +22,7 @@ public class DestinationController {
     @Autowired
     DestinationController(DestinationServiceImpl destinationService){this.destinationService = destinationService;}
 
-    @GetMapping("/")
+    @GetMapping("/USER/")
     public ResponseEntity<Object> findAll() {
         List<Destination> destinations = destinationService.findAll();
         if (destinations != null && !destinations.isEmpty()) {

@@ -13,14 +13,17 @@ public class Request {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "request_id")
-    private int id;
+    private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "destination_id") // Название поля, ссылающегося на destination_id в таблице request
-    private Destination destination; // Изменение типа поля на класс Destination
+    @JoinColumn(name = "destination_id")
+    private Destination destination;
 
     @Column(name = "cargo_quantity")
     private int cargoQuantity;
+
+    @Column(name = "status")
+    private boolean status;
 
     @ManyToOne
     @JoinColumn(name = "cargo_type_id")

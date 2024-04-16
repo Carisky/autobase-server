@@ -1,0 +1,1 @@
+ALTER TABLE cargotype ADD COLUMN require_xp integer;

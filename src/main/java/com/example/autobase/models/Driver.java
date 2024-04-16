@@ -15,11 +15,18 @@ public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "driver_id")
-    private int id;
+    private Long id;
 
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "experience")
     private int experience;
+
+    @Column(name = "status")
     private boolean status;
+
+    @Column(name = "earnings")
     private BigDecimal earnings;
 
 }

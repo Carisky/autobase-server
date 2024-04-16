@@ -13,7 +13,11 @@ public class Destination {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "destination_id")
-    private int id;
+    private Long id;
 
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "distance")
+    private int distance;
 }
