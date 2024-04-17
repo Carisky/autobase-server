@@ -1,5 +1,6 @@
 package com.example.autobase.services.impl;
 
+import com.example.autobase.models.Driver;
 import com.example.autobase.models.Trip;
 import com.example.autobase.repositories.TripRepository;
 import com.example.autobase.services.interfaces.TripService;
@@ -35,5 +36,10 @@ public class TripServiceImpl implements TripService {
         Optional<Trip> deleted = tripRepository.findById(id);
         deleted.ifPresent(trip -> tripRepository.delete(trip));
         return deleted;
+    }
+
+    @Override
+    public List<Trip> findByDriver(Optional<Driver> driver) {
+        return tripRepository.findByDriver(driver);
     }
 }

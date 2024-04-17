@@ -1,6 +1,7 @@
 package com.example.autobase.services.interfaces;
 
 
+import com.example.autobase.models.Driver;
 import com.example.autobase.models.Trip;
 
 import java.util.List;
@@ -13,4 +14,5 @@ public interface TripService {
     Optional<Trip> findById(long id);
 
     Trip create(Trip trip);
+    List<Trip> findByDriver(Optional<Driver> driver);
 }
