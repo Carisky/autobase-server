@@ -10,4 +10,5 @@ public interface DriverService {
     Optional<Driver> findById(Long id);
     Driver create(Driver driver);
     Optional<Driver> delete(Long id);
+    Optional<Driver> findByName(String name);
 }
