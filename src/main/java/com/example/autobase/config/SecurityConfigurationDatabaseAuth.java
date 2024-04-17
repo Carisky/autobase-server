@@ -37,6 +37,7 @@ public class SecurityConfigurationDatabaseAuth {
                         .antMatchers("/Login/**").permitAll()
                         .antMatchers("/**/ADMIN/**").hasAuthority("ADMIN")
                         .antMatchers("/**/USER/**").hasAuthority("USER")
+                        .antMatchers("/**/DRIVER/**").hasAuthority("DRIVER")
                         .anyRequest().authenticated()
                 )
                 .logout((logout) -> logout
