@@ -43,7 +43,7 @@ public class RequestController {
         }
     }
 
-    @PostMapping("/")
+    @PostMapping("/USER/")
     public ResponseEntity<Object> create(@RequestBody Map<String, String> payload) {
         long destinationId = Long.parseLong(payload.get("destination_id"));
         long cargoTypeId = Long.parseLong(payload.get("cargo_type"));
