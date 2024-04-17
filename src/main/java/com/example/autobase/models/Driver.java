@@ -2,6 +2,7 @@ package com.example.autobase.models;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -29,5 +30,8 @@ public class Driver {
     @Column(name = "earnings")
     private BigDecimal earnings;
 
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private AppUser appUser;
 }
 
