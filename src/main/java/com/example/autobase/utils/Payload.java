@@ -3,6 +3,7 @@ package com.example.autobase.utils;
 import com.example.autobase.models.Car;
 import com.example.autobase.models.Driver;
 import com.example.autobase.models.Request;
+import com.example.autobase.models.Trip;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,4 +24,6 @@ public class Payload {
     @JsonAlias({"car", "vehicle"})
     private Car car;
 
+    @JsonAlias({"trip", "trp"})
+    private Trip trip;
 }
