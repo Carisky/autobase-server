@@ -40,4 +40,9 @@ public class DriverServiceImpl implements DriverService {
         deleted.ifPresent(driver -> driverRepository.delete(driver));
         return deleted;
     }
+
+    @Override
+    public Optional<Driver> findByName(String name) {
+        return driverRepository.findByAppUser_Username(name);
+    }
 }
